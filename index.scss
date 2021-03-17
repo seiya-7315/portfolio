@@ -63,16 +63,14 @@ html{
                 }
                 ////トップページ名前の部分////
                 .name{
-                    position: absolute;
-                    top: 11rem;
-                    left: 12rem;
                     color: $white;
                     font-size: 6rem;
+                    margin: -26rem 0 0 10rem;
                     animation: name_fadeIn 4s ease 0s;
                     @media(max-width:999px){
                         font-size: 7rem;
-                        top: 19rem;
-                        left: 21rem;
+                        margin: -26rem 0 0 0;
+                        text-align: center;
                     }
                     @media(max-width:575px){
                         top: 12rem;
@@ -104,19 +102,15 @@ html{
                 ////理念の部分////
                 .top_message{
                   color: $white;
-                  width: 75rem;
-                  position: absolute;
-                  top: 41rem;
-                  right: 3rem;
+                  margin: 20rem 0 0 60rem;
                   animation: message_fadeIn 7s ease 0s;
                   @media(max-width:999px){
-                    top: 47rem;
-                    right: 15rem;
+                    margin: 20rem auto 0;
+                    width: 70rem;
                    }
                   @media(max-width:575px){
                     width: 38rem;
-                    top: 28rem;
-                    right: 4.5rem;
+                    margin: 12rem auto 0;
                    }
                   ////理念の文字の設定////
                   h1{
