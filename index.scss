@@ -10,70 +10,76 @@ $title_color:#55616b;
 html{
     font-size: 0.714vw;  //1rem = 10px (希望デフォルトpx/画面幅*100)
     @media (max-width:999px){  //タブレット版
-        font-size: 1.1vw;
+        font-size: 0.9vw;
     }
     @media (max-width:575px){  //スマホ版
         font-size: 2vw;
     }
     body{
         font-size: 1.6rem;
-        .wrapper{
-            overflow: hidden;    //右端の空白埋め
+        .wrapper{ //右端の空白埋め
+            overflow: hidden;
 
             //////////////ここからトップページ////////////////////
             .top{     
                 width: 100%;
                 height: auto;
                 background-color: $main_color;
-                padding: 40.5rem;
+                padding: 40.5rem 0;
                 position: relative;
                 z-index: 10;
-                @media(max-width:575px){
-                    padding: 43rem;
+                @media(max-width:999px){
+                    padding: 45rem 0;
                 }
+                @media(max-width:575px){
+                    padding: 43rem 0;
+                }
+                ////ここからヘッダー/////
                 header{
                     position: fixed;
                     top: 0;
                     left: 0;
                     width: 100%;
-
-                    .navbar{    //ナビバーの全体的な上下の空白
+                    ////ヘッダーの上下の余白////
+                    .navbar{
                         padding: 12px 0;
                         background-color: $main_color;
-
-                        .navbar-brand{    //ロゴ
-                            font-size: 2.5rem;
-                            font-weight: 200;
-                            letter-spacing: 2px;
-                            color: $white;
-                            margin-left: 4.5rem;
-                        }
-
-                        .navbar-collapse{      //ナビメニュー
-                            margin-left: 65rem;
-
-                            .nav-link{         //各メニュー
+                        ////ヘッダーの位置感////
+                        .navbar-nav{
+                            margin: 0 10rem 0 auto;
+                            ////各メニューの細かい設定////
+                            .nav-link{
                                 font-size: 2.3rem;
                                 font-weight: 100;
                                 margin-left: 8rem;
                                 color: $white;
+                                @media(max-width:999px){
+                                    font-size: 2.4rem;
+                                    margin-left: 5rem;
+                                }
                             }
                         }
                     }
                 }
-
-                .name{      //トップページ自分の名前 
+                ////トップページ名前の部分////
+                .name{
                     position: absolute;
                     top: 11rem;
                     left: 12rem;
                     color: $white;
                     font-size: 6rem;
                     animation: name_fadeIn 4s ease 0s;
+                    @media(max-width:999px){
+                        font-size: 7rem;
+                        top: 19rem;
+                        left: 21rem;
+                    }
                     @media(max-width:575px){
                         top: 12rem;
                         left: 5rem;
                         font-size: 3.5rem;
                     }
+                    ////名前文字の設定////
                     P{
                         font-weight: 100;
                         letter-spacing: 20px;
@@ -82,6 +88,7 @@ html{
                             letter-spacing: 13px;
                         }
                     }
+                    ////アニメーション////
                     @keyframes name_fadeIn{
                         from{
                             opacity: 0;
@@ -94,20 +101,24 @@ html{
                         }
                     }
                 }
-
-                .top_message{    // トップページ自分の理念
+                ////理念の部分////
+                .top_message{
                   color: $white;
                   width: 75rem;
                   position: absolute;
                   top: 41rem;
                   right: 3rem;
                   animation: message_fadeIn 7s ease 0s;
+                  @media(max-width:999px){
+                    top: 47rem;
+                    right: 15rem;
+                   }
                   @media(max-width:575px){
                     width: 38rem;
                     top: 28rem;
-                    right: 40.5rem;
+                    right: 4.5rem;
                    }
-                  
+                  ////理念の文字の設定////
                   h1{
                     font-size: 3.5rem;
                     line-height: 1.6;
@@ -115,30 +126,32 @@ html{
                         font-size: 3.2rem;
                     }
                   }
+                  ////アニメーション////
                   @keyframes message_fadeIn{
                       from{
-                          opacity: 0;
-                          transform: translateX(30px);
+                        opacity: 0;
+                        transform: translateX(30px);
                       }
   
                       to{
-                          opacity: 1;
-                          transform: translateX(0);
+                        opacity: 1;
+                        transform: translateX(0);
                       }
                     }
                 }
-
-                .who{     //who?の部分
+                ////whoの部分////
+                .who{ 
                     position: absolute;
                     top: 41rem;
                     left: 9rem;
-                    @media(max-width:575px){
+                    @media(max-width:999px){
                         display: none;
                     }
                     &:hover{
                         cursor: pointer;
                     }
-                    a{   //whoの線
+                    ////線////
+                    a{
                         position: relative;
                         writing-mode: vertical-rl;
                         color: $white;
@@ -148,7 +161,8 @@ html{
                         padding-bottom: 255px;
                         text-decoration: none;
                     }
-                    a::after{   //whoの矢印
+                    ////矢印////
+                    a::after{
                         content: '';
                         position: absolute;
                         top: 32rem;
@@ -165,10 +179,12 @@ html{
 
 
             ////////////////// ここからプロフィール欄 //////////////////
+            ////背景////
             .profile{         
                 width: 100%;
                 height: auto;
                 background-color: $back_gray;
+                ////コンテンツ全体的な設定////
                 .profile_wrapper{
                     width: 90%;
                     margin: 0 auto;
@@ -178,8 +194,8 @@ html{
                     @media(max-width:575px){
                         padding: 11rem 0 5rem;
                     }
-
-                    .profile_img1{     //プロフィール写真
+                    ////写真////
+                    .profile_img1{
                         width: 55rem;
                         height: auto;
                         @media(max-width:575px){
@@ -191,8 +207,9 @@ html{
                             border-radius: 10px;
                         }
                     }
-                    
-                    .profile_text{      //自己紹介文
+                    //// 文 ////
+                    .profile_text{ 
+                        ////名前////
                         .profile_name{
                             font-size: 4rem;
                             font-family: system-ui;
@@ -201,16 +218,21 @@ html{
                             @media(max-width:575px){
                                 display: inline;
                             }
+                            ////年齢////
                             span{
                                 font-size: 2.5rem;
                             }
                         }
+                        ////文字の設定////
                         p{   
                             width: 71rem;
                             font-size: 2.2rem;
                             line-height: 2;
                             color: $text_color;
                             opacity: .8;
+                            @media(max-width:999px){
+                                width: 55rem;
+                            }
                             @media(max-width:575px){
                                 width: 40rem;
                                 font-size: 2.5rem;
@@ -226,19 +248,23 @@ html{
             .container-fluid{
                 width: 90%;
                 height: auto;
+                ////枠の設定////
                 .skill_container{   
                     box-shadow: 0 0 8px gray;
                     border-radius: 30px;
                     border: 1px solid gray;
-
-                    .inner{    //中身の空白
+                    ////中身の空白など////
+                    .inner{
                         padding: 4rem 10rem;
                         height: auto;
+                        @media (max-width:999px){
+                            padding: 4rem 7rem;
+                        }
                         @media (max-width:575px) {
                             padding: 4rem 4rem;
                         }
-
-                        h3{   //中身のタイトル
+                        ////タイトル////
+                        h3{ 
                             font-size: 2.5rem;
                             font-weight: bold;
                             color: $title_color;
@@ -246,23 +272,26 @@ html{
                                 font-size: 2.8rem;
                             }
                         } 
-
+                        ////文字////
                         p{
                             color:$text_color;
                         }
-
+                        ////「今後のスキルイメージ」////
                         .skill_image{
                             font-size: 2rem;
                             width: 45rem;
                             margin: 0 auto;
                             line-height: 40px;
+                            @media (max-width:999px){
+                                width: 40rem;
+                            }
                             @media (max-width:575px){
                                 width: 38rem;
                                 font-size: 2.2rem;
                             }
                         }
-
-                        .skill{    //各スキル
+                        ////各スキルの文字の設定など////
+                        .skill{ 
                             @media (max-width:575px){
                                 margin: 0 auto;
                                 width: 24rem;
@@ -284,7 +313,7 @@ html{
                                 }
                             }
                         }
-
+                        ////各スキル欄下の小文字の色の設定////
                         .skill_text{
                             color: gray;
                         }
@@ -304,27 +333,21 @@ html{
                     @media (max-width:575px){
                         width: 95%;
                     }
-
                     .work{
-                        .inner{   //カード全体のスタイル
+                        ////カードの全体的なスタイル////
+                        .inner{
                             background-color: $white;
                             height: 49rem;
                             box-shadow: 0 0 12px DarkGray;
                             border-radius: 20px;
                             margin-bottom: 40px;
-                            @media (max-width:999px){
-                                height: 104rem;
-                            }
                             @media (max-width:575px) {
                                 height: 67rem;
                             }
-
-                            .work_pic{        //カードの写真部分
+                            ////写真部分////
+                            .work_pic{
                                 height: 30rem;
                                 text-align: center;
-                                @media (max-width:999px){
-                                    height: 83rem;
-                                }
                                 @media (max-width:575px) {
                                     height: 45rem;
                                 }
@@ -336,37 +359,37 @@ html{
                                     opacity: .6;
                                 }
                             }
-
-                            .work_title{     //写真下のタイトル
+                            ////写真下のスタイル////
+                            .work_title{ 
                                 font-size: 19px;
                                 font-weight: bold;
                                 margin: 1.5rem 0;
                                 color: $title_color;
                                 @media (max-width:999px){
-                                    font-size: 3rem;
+                                    font-size: 2rem;
                                 }
                                 @media (max-width:575px) {
                                     font-size: 2.3rem;
                                 }
                             }
-
-                            .use_skill{     //使っているスキル
+                            ////使っているスキル記載部分////
+                            .use_skill{ 
                                 font-size: 1.4rem;
                                 color:$text_color;
                                 width: 16rem;
                                 margin: 0 auto;
                                 margin-bottom: 2.5rem;
                                 @media (max-width:999px){
-                                    font-size: 2rem;
-                                    width: 43rem;
+                                    font-size: 1.5rem;
+                                    width: 22rem;
                                 }
                                 @media (max-width:575px) {
                                     font-size: 1.8rem;
                                     width: 21rem;
                                 }
                             }
-
-                            .git{     //Git hubボタン
+                            ////Git hubボタン////
+                            .git{
                                 display: block;
                                 color: $white;
                                 width: 16rem;
@@ -399,6 +422,7 @@ html{
                     background-size: 99rem auto;
                     height: 58rem;
                 }
+                ////写真に薄暗いの重ねる////
                 &::before{
                     background-color: rgba(0,0,0,0.3);
                     position: absolute;
@@ -408,7 +432,7 @@ html{
                     left: 0;
                     content: ' ';
                 }
-
+                ////テキストの全体的な位置感////
                 .message_text{
                     position: absolute;
                     top: 50%;
@@ -416,6 +440,7 @@ html{
                     transform: translate(-50%, -50%);
                     -webkit-transform: translate(-50%, -50%);
                     -ms-transform: translate(-50%, -50%);
+                    ////文字のスタイル////
                     P{
                         color: $white;
                         font-size: 2.5rem;
@@ -425,9 +450,6 @@ html{
                         @media (max-width:575px){
                             width: 44rem;
                             line-height: 5rem;
-                        }
-                        span{
-                            font-size: 3.5rem;
                         }
                     }
                 }
@@ -439,23 +461,26 @@ html{
             .contact{
                 position: relative;
                 width: 100%;
-                height: 500px;
+                height: 50rem;
                 @media (max-width:575px){
-                    height: 295px;
+                    height: 40rem;
                 }
-
-                h1{  //I Love ramenのとこ
+                ////I Love Ramenのとこ////
+                h1{
                     font-size: 20rem;
                     color: $main_color;
                     opacity: .2;
+                    @media (max-width:999px){
+                        font-size: 18rem;
+                    }
                     @media (max-width:575px){
                         font-size: 8rem;
                     }
                 }
-
-                .contact_child{     //カード部分
+                ////カードのスタイル////
+                .contact_child{ 
                     position: absolute;
-                    top: 178px;
+                    top: 18rem;
                     left: 0;
                     right: 0;
                     width: 48rem;
@@ -464,25 +489,25 @@ html{
                     margin: 0 auto;
                     text-align: center;
                     padding: 5rem;
-                    height: 265px;
+                    height: 26rem;
                     box-shadow: 0 0 12px LightSteelBlue;
                     @media (max-width:575px){
-                        top: 61px;
-                        height: 202px;
+                        top: 7.5rem;
+                        height: 26rem;
                     }
-
-                    h3{  //CONTACTの部分
+                    ////CONTACTの部分////
+                    h3{
                         color: $title_color;
                         font-size: 3.5rem;
                         opacity: .8;
                         letter-spacing: 4px;
                     }
-
-                    p{  //いつでもご連絡くださいの部分
+                    ////いつでも連絡くださいの部分////
+                    p{
                         color: $text_color;
                     }
-
-                    .twitter{  //twitterボタンの部分
+                    ////Twitterボタン////
+                    .twitter{
                         display: block;
                         color: $white;
                         font-size: 1.8rem;
@@ -508,8 +533,8 @@ html{
                 height: auto;
                 padding: 6rem 0;
                 margin-top: 9rem;
-
-                ul{  //profile skill...
+                ////profile skill...////
+                ul{ 
                     display: flex;
                     justify-content: center;
                     padding: 0;
@@ -522,8 +547,8 @@ html{
                         }
                     }
                 }
-
-                p{  //copyright
+                ////copyright////
+                p{  
                     color: $title_color;
                     font-size: 1.2rem;
                     margin-right: 3.5rem;
