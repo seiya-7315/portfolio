@@ -1,0 +1,587 @@
+///////カラー変数////////////
+$main_color:lightblue;
+$back_gray:#f1f2f4;
+$white:white;
+$text_color:#252a2e;
+$title_color:#55616b;
+///////////////////////////
+
+
+html{
+    font-size: 0.714vw;  //1rem = 10px (希望デフォルトpx/画面幅*100)
+    @media (max-width:999px){  //タブレット版
+        font-size: 1.1vw;
+    }
+    @media (max-width:575px){  //スマホ版
+        font-size: 2vw;
+    }
+    body{
+        font-size: 1.6rem;
+        .wrapper{
+            overflow: hidden;    //右端の空白埋め
+
+            //////////////ここからトップページ////////////////////
+            .top{     
+                width: 100%;
+                height: auto;
+                background-color: $main_color;
+                padding: 40.5rem;
+                position: relative;
+                z-index: 10;
+                @media(max-width:575px){
+                    padding: 43rem;
+                }
+                header{
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+
+                    .navbar{    //ナビバーの全体的な上下の空白
+                        padding: 12px 0;
+                        background-color: $main_color;
+
+                        .navbar-brand{    //ロゴ
+                            font-size: 2.5rem;
+                            font-weight: 200;
+                            letter-spacing: 2px;
+                            color: $white;
+                            margin-left: 4.5rem;
+                        }
+
+                        .navbar-collapse{      //ナビメニュー
+                            margin-left: 65rem;
+
+                            .nav-link{         //各メニュー
+                                font-size: 2.3rem;
+                                font-weight: 100;
+                                margin-left: 8rem;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
+                .name{      //トップページ自分の名前 
+                    position: absolute;
+                    top: 11rem;
+                    left: 12rem;
+                    color: $white;
+                    font-size: 6rem;
+                    animation: name_fadeIn 4s ease 0s;
+                    @media(max-width:575px){
+                        top: 12rem;
+                        left: 5rem;
+                        font-size: 3.5rem;
+                    }
+                    P{
+                        font-weight: 100;
+                        letter-spacing: 20px;
+                        @media(max-width:575px){
+                            font-weight: 300;
+                            letter-spacing: 13px;
+                        }
+                    }
+                    @keyframes name_fadeIn{
+                        from{
+                            opacity: 0;
+                            transform: translateX(-30px);
+                        }
+    
+                        to{
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+
+                .top_message{    // トップページ自分の理念
+                  color: $white;
+                  width: 75rem;
+                  position: absolute;
+                  top: 41rem;
+                  right: 3rem;
+                  animation: message_fadeIn 7s ease 0s;
+                  @media(max-width:575px){
+                    width: 38rem;
+                    top: 28rem;
+                    right: 40.5rem;
+                   }
+                  
+                  h1{
+                    font-size: 3.5rem;
+                    line-height: 1.6;
+                    @media(max-width:575px){
+                        font-size: 3.2rem;
+                    }
+                  }
+                  @keyframes message_fadeIn{
+                      from{
+                          opacity: 0;
+                          transform: translateX(30px);
+                      }
+  
+                      to{
+                          opacity: 1;
+                          transform: translateX(0);
+                      }
+                    }
+                }
+
+                .who{     //who?の部分
+                    position: absolute;
+                    top: 41rem;
+                    left: 9rem;
+                    @media(max-width:575px){
+                        display: none;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    a{   //whoの線
+                        position: relative;
+                        writing-mode: vertical-rl;
+                        color: $white;
+                        font-size: 4rem;
+                        font-weight: 300;
+                        border-right: 2px solid white;
+                        padding-bottom: 255px;
+                        text-decoration: none;
+                    }
+                    a::after{   //whoの矢印
+                        content: '';
+                        position: absolute;
+                        top: 32rem;
+                        left: 5.9rem;
+                        width: 0;
+                        height: 0;
+                        border-left: 0 solid transparent;
+                        border-right: 24px solid transparent;
+                        border-top: 36px solid white;
+                    }
+                }
+            }
+
+
+
+            ////////////////// ここからプロフィール欄 //////////////////
+            .profile{         
+                width: 100%;
+                height: auto;
+                background-color: $back_gray;
+                .profile_wrapper{
+                    width: 90%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 19rem 0;
+                    @media(max-width:575px){
+                        padding: 11rem 0 5rem;
+                    }
+
+                    .profile_img1{     //プロフィール写真
+                        width: 55rem;
+                        height: auto;
+                        @media(max-width:575px){
+                            margin-bottom: 3rem;
+                        }
+                        img{          
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 10px;
+                        }
+                    }
+                    
+                    .profile_text{      //自己紹介文
+                        .profile_name{
+                            font-size: 4rem;
+                            font-family: system-ui;
+                            color: $text_color;
+                            opacity: .8;
+                            @media(max-width:575px){
+                                display: inline;
+                            }
+                            span{
+                                font-size: 2.5rem;
+                            }
+                        }
+                        p{   
+                            width: 71rem;
+                            font-size: 2.2rem;
+                            line-height: 2;
+                            color: $text_color;
+                            opacity: .8;
+                            @media(max-width:575px){
+                                width: 40rem;
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+                }
+            }   
+            
+
+
+            /////////////// ここからスキルセット欄 ///////////////
+            .container-fluid{
+                width: 90%;
+                height: auto;
+                .skill_container{   
+                    box-shadow: 0 0 8px gray;
+                    border-radius: 30px;
+                    border: 1px solid gray;
+
+                    .inner{    //中身の空白
+                        padding: 4rem 10rem;
+                        height: auto;
+                        @media (max-width:575px) {
+                            padding: 4rem 4rem;
+                        }
+
+                        h3{   //中身のタイトル
+                            font-size: 2.5rem;
+                            font-weight: bold;
+                            color: $title_color;
+                            @media (max-width:575px){
+                                font-size: 2.8rem;
+                            }
+                        } 
+
+                        p{
+                            color:$text_color;
+                        }
+
+                        .skill_image{
+                            font-size: 2rem;
+                            width: 45rem;
+                            margin: 0 auto;
+                            line-height: 40px;
+                            @media (max-width:575px){
+                                width: 38rem;
+                                font-size: 2.2rem;
+                            }
+                        }
+
+                        .skill{    //各スキル
+                            @media (max-width:575px){
+                                margin: 0 auto;
+                                width: 24rem;
+                                font-size: 1.8rem;
+                            }
+                            ul{
+                                list-style: none;
+                                padding: 0;
+                                margin: 0;
+                                li{
+                                    color: $text_color;
+                                    opacity: .9;
+                                    font-size: 1.8rem;
+                                    margin-bottom: 1.2rem;
+                                    font-weight: bold;
+                                    @media (max-width:575px){
+                                        font-size: 2.2rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .skill_text{
+                            color: gray;
+                        }
+                    }
+                }
+            }
+
+    
+    
+            ////////////// ここから作品集 //////////////
+            .works{
+                background-color: $back_gray;
+                padding: 5rem 0;
+                .container-fluid{
+                    width: 90%;
+                    height: auto;
+                    @media (max-width:575px){
+                        width: 95%;
+                    }
+
+                    .work{
+                        .inner{   //カード全体のスタイル
+                            background-color: $white;
+                            height: 49rem;
+                            box-shadow: 0 0 12px DarkGray;
+                            border-radius: 20px;
+                            margin-bottom: 40px;
+                            @media (max-width:999px){
+                                height: 104rem;
+                            }
+                            @media (max-width:575px) {
+                                height: 67rem;
+                            }
+
+                            .work_pic{        //カードの写真部分
+                                height: 30rem;
+                                text-align: center;
+                                @media (max-width:999px){
+                                    height: 83rem;
+                                }
+                                @media (max-width:575px) {
+                                    height: 45rem;
+                                }
+                                img{
+                                    max-width: 85%;
+                                    height: 100%;
+                                }
+                                &:hover{
+                                    opacity: .6;
+                                }
+                            }
+
+                            .work_title{     //写真下のタイトル
+                                font-size: 19px;
+                                font-weight: bold;
+                                margin: 1.5rem 0;
+                                color: $title_color;
+                                @media (max-width:999px){
+                                    font-size: 3rem;
+                                }
+                                @media (max-width:575px) {
+                                    font-size: 2.3rem;
+                                }
+                            }
+
+                            .use_skill{     //使っているスキル
+                                font-size: 1.4rem;
+                                color:$text_color;
+                                width: 16rem;
+                                margin: 0 auto;
+                                margin-bottom: 2.5rem;
+                                @media (max-width:999px){
+                                    font-size: 2rem;
+                                    width: 43rem;
+                                }
+                                @media (max-width:575px) {
+                                    font-size: 1.8rem;
+                                    width: 21rem;
+                                }
+                            }
+
+                            .git{     //Git hubボタン
+                                display: block;
+                                color: $white;
+                                width: 16rem;
+                                margin: 0 auto;
+                                padding: .2rem 0;
+                                background-color: skyblue;
+                                border-radius: 17px;
+                                box-shadow: 0 0 6px silver;
+                                text-decoration: none;
+                                @media (max-width:999px){
+                                    font-size: 2.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+            /////////////// ここから夕日写真の欄 ////////////////
+            .message{   
+                width: 100%;
+                height: 70rem;
+                background-image: url("./portfolio_pic/message.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                @media (max-width:575px){
+                    background-size: 99rem auto;
+                    height: 58rem;
+                }
+                &::before{
+                    background-color: rgba(0,0,0,0.3);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    content: ' ';
+                }
+
+                .message_text{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    P{
+                        color: $white;
+                        font-size: 2.5rem;
+                        width: 100rem;
+                        line-height: 7rem;
+                        font-family: system-ui;
+                        @media (max-width:575px){
+                            width: 44rem;
+                            line-height: 5rem;
+                        }
+                        span{
+                            font-size: 3.5rem;
+                        }
+                    }
+                }
+            }
+
+
+
+            ///////////// ここからコンタクト欄 ///////////////
+            .contact{
+                position: relative;
+                width: 100%;
+                height: 500px;
+                @media (max-width:575px){
+                    height: 295px;
+                }
+
+                h1{  //I Love ramenのとこ
+                    font-size: 20rem;
+                    color: $main_color;
+                    opacity: .2;
+                    @media (max-width:575px){
+                        font-size: 8rem;
+                    }
+                }
+
+                .contact_child{     //カード部分
+                    position: absolute;
+                    top: 178px;
+                    left: 0;
+                    right: 0;
+                    width: 48rem;
+                    background-color: $white;
+                    border-radius: 20px;
+                    margin: 0 auto;
+                    text-align: center;
+                    padding: 5rem;
+                    height: 265px;
+                    box-shadow: 0 0 12px LightSteelBlue;
+                    @media (max-width:575px){
+                        top: 61px;
+                        height: 202px;
+                    }
+
+                    h3{  //CONTACTの部分
+                        color: $title_color;
+                        font-size: 3.5rem;
+                        opacity: .8;
+                        letter-spacing: 4px;
+                    }
+
+                    p{  //いつでもご連絡くださいの部分
+                        color: $text_color;
+                    }
+
+                    .twitter{  //twitterボタンの部分
+                        display: block;
+                        color: $white;
+                        font-size: 1.8rem;
+                        width: 25rem;
+                        margin: 2.5rem auto 0;
+                        padding: .4rem 0;
+                        background-color: skyblue;
+                        border-radius: 17px;
+                        box-shadow: 0 0 6px silver;
+                        text-decoration: none;
+                        @media (max-width:999px){
+                            font-size: 2.2rem;
+                        }
+                    }
+                }
+            }
+           
+    
+            ///////// ここからfooter ////////////
+            footer{
+                background-color: GainsBoro;
+                width: 100%;
+                height: auto;
+                padding: 6rem 0;
+                margin-top: 9rem;
+
+                ul{  //profile skill...
+                    display: flex;
+                    justify-content: center;
+                    padding: 0;
+                    li{
+                        margin-right: 3rem;
+                        font-size: 14px;
+                        list-style: none;
+                        a{
+                            color: $title_color;
+                        }
+                    }
+                }
+
+                p{  //copyright
+                    color: $title_color;
+                    font-size: 1.2rem;
+                    margin-right: 3.5rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////jQuery用css/////////////
+
+.fadeIn {  // worksフェードインの最初の状態
+    opacity: 0;
+    transform : translate(0, 100px);
+    transition : all 1500ms;
+}
+.scrollIn{  // worksフェードイン後の状態
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+
+////////////////////多使用するcss//////////////
+
+.sp_only{  // スマホの時だけ表示
+    display: none;
+    @media (max-width:575px){
+        display: block;
+    }
+}
+.pc_only{  //パソコンの時だけ表示
+    @media (max-width:575px){
+        display: none;
+    }
+}
+
+.large_margin{  // タイトル間のマージンなど
+    margin-top: 20rem;
+    @media(max-width:575px){
+        margin-top: 10rem;
+    }
+}
+.normal_margin{
+    margin-top: 10rem;
+}
+.small_margin{
+    margin-bottom: 5rem;
+}
+
+.line_space{  // 行間など
+    margin-top: 3rem;
+}
+
+.centering{  // 中央寄せ
+    margin: 0 auto;
+    text-align: center;
+}
