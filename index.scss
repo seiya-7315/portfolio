@@ -8,7 +8,7 @@ $title_color:#55616b;
 
 
 html{
-    font-size: 0.714vw;  //1rem = 10px (希望デフォルトpx/画面幅*100)
+    font-size: 0.714vw;  //10(px)/1400*100 ⇨ 画面幅1400pxの時に10px
     @media (max-width:999px){  //タブレット版
         font-size: 0.9vw;
     }
